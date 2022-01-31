@@ -1,4 +1,65 @@
 
 body {
-    background-color: red;
+    background-image:linear-gradient(to bottom, rgba(64,150,137,255) 15%, rgba(218,219,211,255) 15%, grey 100% );
+    height: 100vh;
+}
+
+main{
+    background-color: #fff;
+    height:90%;
+}
+
+/* user section */
+
+
+#user-section{
+ border-right: 1px solid dodgerblue;
+}
+
+#user {
+    height: 70px;
+    background-color: #eaeaea;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.icons{
+    width: 100px;
+}
+
+#alert{
+    height: 70px;
+    background-color: #8edafa;
+}
+
+.search{
+    background-color: #fafafa;
+}
+
+.contact{
+    height: 70px;
+    border-bottom:1px solid #fafafa;
+}
+
+
+/* message section */
+
+#message-section{
+    background-image: url(/img/mine.jpg);
+    height: 100%;
+}
+
+
+#current-contact{
+    height: 70px;
+    background-color: #eaeaea;
+}
+
+
+#mex-text{
+    background-color: #f3eeea;
 }
