@@ -26,6 +26,18 @@ main{
     height: 50px;
 }
 
+.gray{
+    color: gray;
+}
+
+#contact-search{
+    background-color: white;
+}
+
+#contact-search input{
+    border: 0;
+}
+
 img{
     border-radius: 100%;
 }
@@ -50,13 +62,19 @@ img{
     background-color: #8edafa;
 }
 
+#alert-sub{
+    color: gray;
+    font-size: 15px;
+    text-decoration: underline;
+}
+
 .search{
     background-color: #fafafa;
 }
 
 .contact{
     height: 70px;
-    border-bottom:1px solid #fafafa;
+    border-bottom:2px solid #fafafa;
 }
 
 
@@ -76,4 +94,28 @@ img{
 #mex-area{
     background-image: url(/img/mine.jpg);
     height: 100%;
+}
+
+.mex-text{
+    border-radius: 5px;
+    background-color: green;
+    display: inline-block;
+}
+
+/* chat css */
+
+.sent{
+    justify-content: flex-end;
+}
+
+.received{
+    justify-content: flex-start;
+}
+
+.sent .mex-text{
+    background-color: #d5f9ba;
+}
+
+.received .mex-text{
+    background-color: #fff ;
 }
