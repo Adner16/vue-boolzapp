@@ -30,6 +30,11 @@ img{
     border-radius: 100%;
 }
 
+#bell{
+    background-color: white;
+    border-radius: 50%;
+}
+
 .icons{
     width: 100px;
     height: 70px;
@@ -57,9 +62,6 @@ img{
 
 /* message section */
 
-#message-section{
-   
-}
 
 #current-contact{
     height: 70px;
@@ -67,7 +69,7 @@ img{
 }
 
 
-#mex-text{
+#mex-type{
     background-color: #f3eeea;
 }
 
