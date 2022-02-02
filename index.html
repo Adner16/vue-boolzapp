@@ -71,10 +71,10 @@
                 <div id="current-contact" class="d-flex align-items-center justify-content-between px-2 position-relative bottom-0">
                     <div class="d-flex align-items-center">
                         <figure class="logo mb-0 me-2">
-                            <img src="img/avatar_3.jpg" alt="logo" class="img-fluid">
+                            <img :src="'img/avatar${contacts[0].avatar}.jpg'" alt="contacts[0].name" class="img-fluid">
                         </figure>
                         <div>
-                            <span>Fabio</span><br>
+                            <span>{{contacts[0].name}}</span><br>
                         <span class="gray">Ultimo accesso alle:</span>
                         </div>
                         
@@ -89,21 +89,11 @@
                 <!-- chat -->
 
                 <div id="mex-area" class="overflow-auto flex-grow-1">
-                    <div v-for='contact in contacts' class="d-flex mex px-3 py-2 sent">
+                    <div v-for='message in contacts' :class="`${contact.messages} d-flex mex px-3 py-2 sent`">
                         <div class="mex-text px-2 py-2">
-                            <p class="m-0">{{contact.text}}</p>
+                            <p class="m-0">{{message.text}}</p>
                         </div>
                     </div>
-                    <!-- <div class="d-flex mex px-3 py-2 sent">
-                        <div class="mex-text px-2 py-2">
-                            <p class="m-0">ricordati di dargli da mangiare</p>
-                        </div>
-                    </div>
-                    <div class="d-flex mex px-3 py-2 received">
-                        <div class="mex-text px-2 py-2">
-                            <p class="m-0">tutto fatto</p>
-                        </div>
-                    </div> -->
                 </div>
                 <div id="mex-type" class="py-2 container">
                     <div class="row">
