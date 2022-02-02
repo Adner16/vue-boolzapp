@@ -6,7 +6,8 @@ Vue.config.devtools = true;
 const app = new Vue ({
     el: '#root',
     data:{
-        currentindex: 0,
+        current: 0,
+        newtext:'',
         user: {
             name: 'Nome Utente',
             avatar: '_io'
@@ -92,10 +93,29 @@ const app = new Vue ({
               ],
             },
         ],
-    }
+    },
     methods: {
-        showMessages (index){
-            
-        }
+        showMessages(index){
+          this.current = index;
+        },
+        sendMessage(){
+           if(!this.newText) return;
+           
+           this.addMessage(this.newText, 'sent');
+           this.newText='',
+
+        window.setTimeout(() => {
+          this.addMessage('ok', 'received');
+        }, 3000)
+        },
+
+
+        addMessage(text, status){
+          const newMessage = {
+            text,
+            status,
+          }
+          this.contacts[this.current].messages.push(newMessage);
+          }  
     }
 })

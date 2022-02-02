@@ -54,7 +54,7 @@
                 <!-- contact list -->
 
                 <div class="contact-list">
-                    <div v-for='contact in contacts' class='contact d-flex align-items-center px-2'>
+                    <div v-for='(contact, index) in contacts' @click='showMessages(index)' class='contact d-flex align-items-center px-2'>
                         <div  class="d-flex align-items-center">
                             <figure class="logo mb-0 me-2">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="logo" class="img-fluid">
@@ -71,10 +71,10 @@
                 <div id="current-contact" class="d-flex align-items-center justify-content-between px-2 position-relative bottom-0">
                     <div class="d-flex align-items-center">
                         <figure class="logo mb-0 me-2">
-                            <img :src="'img/avatar${contacts[0].avatar}.jpg'" alt="contacts[0].name" class="img-fluid">
+                            <img :src="`img/avatar${contacts[current].avatar}.jpg`" alt="contacts[current].name" class="img-fluid">
                         </figure>
                         <div>
-                            <span>{{contacts[0].name}}</span><br>
+                            <span>{{contacts[current].name}}</span><br>
                         <span class="gray">Ultimo accesso alle:</span>
                         </div>
                         
@@ -89,7 +89,7 @@
                 <!-- chat -->
 
                 <div id="mex-area" class="overflow-auto flex-grow-1">
-                    <div v-for='message in contacts' :class="`${contact.messages} d-flex mex px-3 py-2 sent`">
+                    <div v-for='message in contacts[current].messages' :class="`${message.status} d-flex mex px-3 py-2 sent`">
                         <div class="mex-text px-2 py-2">
                             <p class="m-0">{{message.text}}</p>
                         </div>
@@ -101,7 +101,7 @@
                             <i class="far fa-smile fa-2x"></i>
                         </div>
                         <div class="col-10">
-                            <input class="form-control me-2" type="search" placeholder="Scrivi un messaggio" aria-label="Search">
+                            <input @keyup.enter='sendMessage' v-model.trim='newText' class="form-control me-2" type="search" placeholder="Scrivi un messaggio" aria-label="Search">
                         </div>
                         <div class="col-1 text-muted d-flex justify-content-center">
                             <i class="fas fa-microphone fa-2x"></i>
